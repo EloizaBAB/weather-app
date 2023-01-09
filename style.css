@@ -1,4 +1,49 @@
-h1 {
-  color: blue;
-  font-size: large;
+.icon-location {
+  width: 18px;
+  position: relative;
+  top: -30px;
+  right: -190px;
+}
+.city-name {
+  font-size: 60px;
+  margin-top: 0px;
+}
+.date {
+  font-size: 20px;
+}
+.max-temperature {
+  font-size: 70px;
+  margin-left: 20px;
+}
+
+header {
+  padding: 40px 30px 5px;
+  padding-left: 10px;
+  margin-left: 20px;
+}
+.location-bar {
+  margin-top: 20px;
+  margin-left: 20px;
+  margin-bottom: 20px;
+}
+.container {
+  max-width: 100%;
+  border: solid black;
+  border-radius: 10px;
+  margin-top: 20px;
+  padding-bottom: 12px;
+  background: rgb(219, 230, 239);
+  box-shadow: rgba(50, 50, 93, 0.25) 0px 50px 100px -20px,
+    rgba(0, 0, 0, 0.3) 0px 30px 60px -30px,
+    rgba(10, 37, 64, 0.35) 0px -2px 6px 0px inset;
+}
+.temperature-grid {
+  margin-top: 60px;
+  border: none;
+}
+.form-location-bar {
+  border-radius: 15px;
+}
+.body-style {
+  background: rgb(208, 195, 231);
 }
