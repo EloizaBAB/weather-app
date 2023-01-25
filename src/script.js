@@ -43,6 +43,7 @@ function showTemperature(response) {
   ).innerHTML = `Humidity:${response.data.main.humidity}%`;
   document.querySelector("#description-line").innerHTML =
     response.data.weather[0].main;
+  document.querySelector("#wind").innerHTML = response.data.wind.speed;
 }
 
 // make an api call and once i get the responde show the temperature

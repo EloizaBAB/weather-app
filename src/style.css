@@ -31,7 +31,7 @@ header {
   margin-top: 20px;
   padding-bottom: 12px;
   border-radius: 74px;
-  background: linear-gradient(225deg, #b9d3df, #dcfaff);
+  background: linear-gradient(225deg, #6fc3e9, #51b3c5);
   box-shadow: -31px 31px 54px #8c9fa9, 31px -31px 54px #ffffff;
 }
 .temperature-grid {
@@ -42,7 +42,7 @@ header {
   border-radius: 15px;
 }
 .body-style {
-  background-image: url("/Users/eloiza/Documents/SheCodes Eloiza/Weather-App-Eloiza/weather-app/src/pexels-miguel-á-padriñán-19670.jpg");
+  background-image: url("/src/pexels-eberhard-grossgasteiger-1287142.jpg");
   width: 800px;
   display: block;
   margin: 0 auto;
@@ -76,4 +76,7 @@ h1 {
 .weather-temperature svg {
   width: 90px;
   margin-left: 20px;
+}
+svg {
+  color: #2a5b66;
 }
