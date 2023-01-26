@@ -63,6 +63,7 @@ header {
 }
 li {
   list-style: none;
+  text-transform: capitalize;
 }
 
 ul {
