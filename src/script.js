@@ -38,6 +38,7 @@ function showTemperature(response) {
   document.querySelector("#temperature").innerHTML = Math.round(
     response.data.main.temp
   );
+  let celsiusTemperature = response.data.main.temp;
   document.querySelector(
     "#humidity"
   ).innerHTML = `Humidity:${response.data.main.humidity}%`;
@@ -52,8 +53,12 @@ function showTemperature(response) {
     `http://openweathermap.org/img/wn/${response.data.weather[0].icon}@2x.png`
   );
 }
-
-// make an api call and once i get the responde show the temperature
+function unitsConversion(event) {
+  event.preventDefault();
+  let fahrenheitTemperature = (celsiusTemperature * 9) / 5 + 32;
+  let temperatureElement = document.querySelector("#temperature");
+  temperatureElement.innerHTML = Math.round(fahrenheitTemperature);
+}
 
 function searchCity(city) {
   let apiKey = "596185bbd624cf50d3971a5660b140aa";
@@ -65,8 +70,17 @@ function handleSubmit(event) {
   let city = document.querySelector("#input-city").value;
   searchCity(city);
 }
+
+let celsiusTemperature = null;
+
 let form = document.querySelector("#search-form");
 form.addEventListener("submit", handleSubmit);
 searchCity("Lisbon");
+
 let getCurrentLocationButton = document.querySelector("#current-location");
 getCurrentLocationButton.addEventListener("click", getCurrentLocation);
+
+let fahreinheitLink = document.querySelector("#fahrenheit-link");
+fahreinheitLink.addEventListener("click", unitsConversion);
+
+searchCity("Lisbon");

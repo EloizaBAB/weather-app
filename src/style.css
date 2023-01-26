@@ -1,19 +1,9 @@
-.icon-location {
-  width: 18px;
-  position: relative;
-  top: -30px;
-  right: -190px;
-}
 .city-name {
   font-size: 60px;
   margin-top: 0px;
 }
 .date {
   font-size: 20px;
-}
-.max-temperature {
-  font-size: 70px;
-  margin-left: 20px;
 }
 
 header {
@@ -42,7 +32,7 @@ header {
   border-radius: 15px;
 }
 .body-style {
-  background-image: url("src/pexels-eberhard-grossgasteiger-1287142.jpg");
+  background-image: url("pexels-eberhard-grossgasteiger-1287142.jpg");
   width: 800px;
   display: block;
   margin: 0 auto;
@@ -55,9 +45,7 @@ header {
   display: block;
   margin: 0 auto;
 }
-.icon {
-  width: 20px;
-}
+
 .weekgrid {
   background: rgb(222, 214, 198);
 }
@@ -74,8 +62,4 @@ ul {
 }
 h1 {
   padding-top: 20px;
-}
-.weather-temperature svg {
-  width: 90px;
-  margin-left: 20px;
 }
