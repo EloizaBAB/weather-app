@@ -21,7 +21,20 @@ header {
   margin-top: 20px;
   padding-bottom: 12px;
   border-radius: 74px;
-  background: linear-gradient(225deg, #6fc3e9, #51b3c5);
+  background: rgb(10, 32, 60);
+  background: linear-gradient(
+    0deg,
+    rgba(10, 32, 60, 1) 0%,
+    rgba(32, 82, 139, 1) 10%,
+    rgba(82, 125, 164, 1) 17%,
+    rgba(80, 131, 172, 1) 23%,
+    rgba(167, 220, 233, 1) 48%,
+    rgba(180, 233, 242, 1) 55%,
+    rgba(198, 252, 255, 1) 69%,
+    rgba(219, 240, 241, 1) 85%,
+    rgba(219, 228, 241, 1) 94%,
+    rgba(219, 228, 241, 1) 98%
+  );
   box-shadow: -31px 31px 54px #8c9fa9, 31px -31px 54px #ffffff;
 }
 .temperature-grid {
@@ -32,7 +45,8 @@ header {
   border-radius: 15px;
 }
 .body-style {
-  background-image: url("pexels-eberhard-grossgasteiger-1287142.jpg");
+  background: rgb(244, 242, 242);
+
   width: 800px;
   display: block;
   margin: 0 auto;
