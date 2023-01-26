@@ -33,6 +33,7 @@ function getCurrentLocation(event) {
   navigator.geolocation.getCurrentPosition(searchLocation);
 }
 function showTemperature(response) {
+  let iconElement = document.querySelector("#icon");
   document.querySelector("#city").innerHTML = response.data.name;
   document.querySelector("#temperature").innerHTML = Math.round(
     response.data.main.temp
@@ -40,9 +41,16 @@ function showTemperature(response) {
   document.querySelector(
     "#humidity"
   ).innerHTML = `Humidity:${response.data.main.humidity}%`;
-  document.querySelector("#description-line").innerHTML =
-    response.data.weather[0].main;
-  document.querySelector("#wind").innerHTML = response.data.wind.speed;
+  document.querySelector(
+    "#description-line"
+  ).innerHTML = `Weather state: ${response.data.weather[0].main}`;
+  document.querySelector(
+    "#wind"
+  ).innerHTML = `Wind speed: ${response.data.wind.speed}`;
+  iconElement.setAttribute(
+    "src",
+    `http://openweathermap.org/img/wn/${response.data.weather[0].icon}@2x.png`
+  );
 }
 
 // make an api call and once i get the responde show the temperature
