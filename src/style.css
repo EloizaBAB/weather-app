@@ -1,16 +1,15 @@
 .city-name {
   font-size: 60px;
   margin-top: 0px;
+  font-family: "Montserrat Alternates", sans-serif;
+  font-weight: bolder;
 }
 .date {
   font-size: 20px;
+  font-family: "Montserrat Alternates", sans-serif;
+  font-weight: bolder;
 }
 
-header {
-  padding: 40px 30px 5px;
-  padding-left: 10px;
-  margin-left: 20px;
-}
 .location-bar {
   margin-top: 34px;
   display: flex;
@@ -54,6 +53,8 @@ header {
   display: flex;
   justify-content: center;
   padding: 20px;
+  font-family: "Montserrat Alternates", sans-serif;
+  font-weight: bolder;
 }
 .current-location-bt {
   display: block;
@@ -69,6 +70,8 @@ header {
 }
 li {
   list-style: none;
+  font-family: "Montserrat Alternates", sans-serif;
+  font-weight: bolder;
 }
 
 ul {
@@ -78,19 +81,27 @@ ul {
 }
 h1 {
   padding-top: 20px;
+  font-family: "Montserrat Alternates", sans-serif;
+  font-weight: bolder;
 }
 .temperature {
   font-size: 70px;
   text-align: center;
+  font-family: "Montserrat Alternates", sans-serif;
+  font-weight: bolder;
 }
 .celsius {
   font-size: 20px;
   position: relative;
   top: -30px;
+  font-family: "Montserrat Alternates", sans-serif;
+  font-weight: bolder;
 }
 a {
   text-decoration: none;
   color: black;
+  font-family: "Montserrat Alternates", sans-serif;
+  font-weight: bolder;
 }
 .icon {
   width: 90px;
@@ -110,6 +121,8 @@ button {
   position: relative;
   box-shadow: 0 15px 30px rgba(0, 0, 0, 0.5);
   overflow: hidden;
+  font-family: "Montserrat Alternates", sans-serif;
+  font-weight: bolder;
 }
 input {
   color: #00154c;
@@ -120,11 +133,16 @@ input {
   border: none;
   border-bottom: 1px solid rgba(32, 82, 139, 1);
   background: transparent;
+  font-family: "Montserrat Alternates", sans-serif;
+  font-weight: bolder;
 }
 
 .form-location-bar {
   width: 100px;
 }
 hr {
-  color: #12376e;
+  width: 500px;
+  display: block;
+  margin: 0 auto;
+  padding-top: 20px;
 }
