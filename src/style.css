@@ -12,9 +12,9 @@ header {
   margin-left: 20px;
 }
 .location-bar {
-  margin-top: 20px;
-  margin-left: 20px;
-  margin-bottom: 20px;
+  margin-top: 34px;
+  display: flex;
+  justify-content: center;
 }
 .container {
   height: 400px;
@@ -27,23 +27,20 @@ header {
     0deg,
     rgba(10, 32, 60, 1) 0%,
     rgba(32, 82, 139, 1) 10%,
-    rgba(82, 125, 164, 1) 17%,
+    #527da4 17%,
     rgba(80, 131, 172, 1) 23%,
     rgba(167, 220, 233, 1) 48%,
     rgba(180, 233, 242, 1) 55%,
     rgba(198, 252, 255, 1) 69%,
     rgba(219, 240, 241, 1) 85%,
     rgba(219, 228, 241, 1) 94%,
-    rgba(219, 228, 241, 1) 98%
+    rgb(216, 211, 227) 98%
   );
   box-shadow: -31px 31px 54px #8c9fa9, 31px -31px 54px #ffffff;
 }
 .temperature-grid {
   margin-top: 60px;
   border: none;
-}
-.form-location-bar {
-  border-radius: 15px;
 }
 .body-style {
   background: rgb(244, 242, 242);
@@ -54,11 +51,17 @@ header {
 }
 .source-link {
   text-decoration: none;
-  text-align: center;
+  display: flex;
+  justify-content: center;
+  padding: 20px;
 }
 .current-location-bt {
   display: block;
   margin: 0 auto;
+}
+.current-location-bt:hover {
+  background: #d9d8e6;
+  color: #12376e;
 }
 
 .weekgrid {
@@ -67,9 +70,7 @@ header {
 li {
   list-style: none;
 }
-li::first-letter {
-  text-transform: capitalize;
-}
+
 ul {
   padding: 0;
   margin: 0;
@@ -80,4 +81,50 @@ h1 {
 }
 .temperature {
   font-size: 70px;
+  text-align: center;
+}
+.celsius {
+  font-size: 20px;
+  position: relative;
+  top: -30px;
+}
+a {
+  text-decoration: none;
+  color: black;
+}
+.icon {
+  width: 90px;
+  height: 90px;
+  position: relative;
+  bottom: -30px;
+}
+button {
+  width: 150px;
+  height: 50px;
+  background: linear-gradient(to top, #00154c, #12376e, #23487f);
+  color: #d1d6dc;
+  border-radius: 50px;
+  border: none;
+  outline: none;
+  cursor: pointer;
+  position: relative;
+  box-shadow: 0 15px 30px rgba(0, 0, 0, 0.5);
+  overflow: hidden;
+}
+input {
+  color: #00154c;
+  font-size: 15px;
+  padding: 5px 5px 5px 5px;
+  display: block;
+  width: 150px;
+  border: none;
+  border-bottom: 1px solid rgba(32, 82, 139, 1);
+  background: transparent;
+}
+
+.form-location-bar {
+  width: 100px;
+}
+hr {
+  color: #12376e;
 }
