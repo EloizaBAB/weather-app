@@ -38,7 +38,7 @@ function showTemperature(response) {
   document.querySelector("#temperature").innerHTML = Math.round(
     response.data.main.temp
   );
-  let celsiusTemperature = response.data.main.temp;
+  celsiusTemperature = response.data.main.temp;
   document.querySelector(
     "#humidity"
   ).innerHTML = `Humidity:${response.data.main.humidity}%`;
