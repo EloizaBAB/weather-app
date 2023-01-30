@@ -53,7 +53,12 @@ function showTemperature(response) {
     `http://openweathermap.org/img/wn/${response.data.weather[0].icon}@2x.png`
   );
 }
-function unitsConversion(event) {
+function conversionToCelsius(event) {
+  temperatureElement = document.querySelector("#temperature");
+  event.preventDefault();
+  temperatureElement.innerHTML = Math.round(celsiusTemperature);
+}
+function conversionToFahrenheit(event) {
   event.preventDefault();
   let fahrenheitTemperature = (celsiusTemperature * 9) / 5 + 32;
   let temperatureElement = document.querySelector("#temperature");
@@ -81,6 +86,8 @@ let getCurrentLocationButton = document.querySelector("#current-location");
 getCurrentLocationButton.addEventListener("click", getCurrentLocation);
 
 let fahreinheitLink = document.querySelector("#fahrenheit-link");
-fahreinheitLink.addEventListener("click", unitsConversion);
+fahreinheitLink.addEventListener("click", conversionToFahrenheit);
+let celsiusLink = document.querySelector("#celsius-link");
+celsiusLink.addEventListener("click", conversionToCelsius);
 
 searchCity("Lisbon");
