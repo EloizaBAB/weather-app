@@ -65,7 +65,8 @@
   color: #12376e;
 }
 
-.weekgrid {
+.forecast-grid {
+  margin-left: 30px;
   text-align: center;
 }
 li {
@@ -125,7 +126,7 @@ button {
   font-weight: bolder;
 }
 input {
-  color: #00154c;
+  color: #021444;
   font-size: 15px;
   padding: 5px 5px 5px 5px;
   display: block;
