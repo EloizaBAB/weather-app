@@ -24,13 +24,18 @@ let now = new Date();
 let date = document.querySelector("#date");
 date.innerHTML = formatDate();
 function searchLocation(position) {
-  let apikey = "596185bbd624cf50d3971a5660b140aa";
+  let apikey = "8161b4309ee03faae957729ba7104797";
   let apiUrl = `https://api.openweathermap.org/data/2.5/weather?lat=${position.coords.latitude}&lon=${position.coords.longitude}&appid=${apikey}&units=metric`;
   axios.get(apiUrl).then(showTemperature);
 }
 function getCurrentLocation(event) {
   event.preventDefault();
   navigator.geolocation.getCurrentPosition(searchLocation);
+}
+function getForecast(coordinates) {
+  let apiKey = "8161b4309ee03faae957729ba7104797";
+  let apiURL = `https://api.openweathermap.org/data/2.5/onecall?lat=${coordinates.lat}&lon=${coordinates.lon}&appid=${apiKey}&units=metric`;
+  axios.get(apiURL).then(displayForecast);
 }
 function showTemperature(response) {
   let iconElement = document.querySelector("#icon");
@@ -52,9 +57,10 @@ function showTemperature(response) {
     "src",
     `http://openweathermap.org/img/wn/${response.data.weather[0].icon}@2x.png`
   );
+  getForecast(response.data.coord);
 }
 
-function displayForecast() {
+function displayForecast(response) {
   let forecastElement = document.querySelector("#forecast");
   let forecastHTML = `<div class="row">`;
   let days = ["wed", "thurs", "fri", "sat"];
@@ -93,7 +99,7 @@ function conversionToFahrenheit(event) {
 }
 
 function searchCity(city) {
-  let apiKey = "596185bbd624cf50d3971a5660b140aa";
+  let apiKey = "8161b4309ee03faae957729ba7104797";
   let apiUrl = `https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${apiKey}&units=metric`;
   axios.get(apiUrl).then(showTemperature);
 }
@@ -118,4 +124,3 @@ let celsiusLink = document.querySelector("#celsius-link");
 celsiusLink.addEventListener("click", conversionToCelsius);
 
 searchCity("Lisbon");
-displayForecast();
