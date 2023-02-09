@@ -32,12 +32,7 @@ function getCurrentLocation(event) {
   event.preventDefault();
   navigator.geolocation.getCurrentPosition(searchLocation);
 }
-function formatDay(timestamp) {
-  let date = new date(timestamp * 1000);
-  let forecastDay = date.getDay();
-  let forecastDays = ["Sun", "Mon", "Tue", "Wed", "Thu", "Fri", "Sat"];
-  return forecastDay;
-}
+
 function getForecast(coordinates) {
   let apiKey = "8161b4309ee03faae957729ba7104797";
   let apiURL = `https://api.openweathermap.org/data/2.5/onecall?lat=${coordinates.lat}&lon=${coordinates.lon}&appid=${apiKey}&units=metric`;
@@ -72,10 +67,11 @@ function displayForecast(response) {
   let forecastElement = document.querySelector("#forecast");
   let forecastHTML = `<div class="row">`;
 
-  forecast.forEach(function (forecastDay) {
-    forecastHTML =
-      forecastHTML +
-      `
+  forecast.forEach(function (forecastDay, index) {
+    if (index < 5) {
+      forecastHTML =
+        forecastHTML +
+        `
               <div class="col-2">
                 <div class="weather-forecast-date">${formatDay(
                   forecastDay.dt
@@ -88,18 +84,25 @@ function displayForecast(response) {
                   width="20px"
                 />
                 <div class="weather-forecast-temperatures">
-                  <span class="weater-forecast-maxtemp">${
+                  <span class="weater-forecast-maxtemp">${Math.round(
                     forecastDay.temp.max
-                  }</span>
-                  <span class="weather-forecast-mintemp">${
+                  )}°</span>
+                  <span class="weather-forecast-mintemp">${Math.round(
                     forecastDay.temp.min
-                  }</span>
+                  )}°</span>
                 </div>
               </div>`;
+    }
   });
 
   forecastHTML = forecastHTML + `</div>`;
   forecastElement.innerHTML = forecastHTML;
+}
+function formatDay(timestamp) {
+  let forecastDate = new Date(timestamp * 1000);
+  let forecastDay = forecastDate.getDay();
+  let forecastDays = ["Sun", "Mon", "Tue", "Wed", "Thu", "Fri", "Sat"];
+  return forecastDays[forecastDay];
 }
 
 function conversionToCelsius(event) {
