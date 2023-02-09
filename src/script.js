@@ -47,13 +47,13 @@ function showTemperature(response) {
   celsiusTemperature = response.data.main.temp;
   document.querySelector(
     "#humidity"
-  ).innerHTML = `Humidity:${response.data.main.humidity}%`;
+  ).innerHTML = `Humidity : ${response.data.main.humidity}%`;
   document.querySelector(
     "#description-line"
-  ).innerHTML = `Weather state: ${response.data.weather[0].main}`;
+  ).innerHTML = `Weather state : ${response.data.weather[0].main}`;
   document.querySelector(
     "#wind"
-  ).innerHTML = `Wind speed: ${response.data.wind.speed}`;
+  ).innerHTML = `Wind speed : ${response.data.wind.speed} m/h`;
   iconElement.setAttribute(
     "src",
     `http://openweathermap.org/img/wn/${response.data.weather[0].icon}@2x.png`
@@ -136,10 +136,5 @@ searchCity("Lisbon");
 
 let getCurrentLocationButton = document.querySelector("#current-location");
 getCurrentLocationButton.addEventListener("click", getCurrentLocation);
-
-let fahreinheitLink = document.querySelector("#fahrenheit-link");
-fahreinheitLink.addEventListener("click", conversionToFahrenheit);
-let celsiusLink = document.querySelector("#celsius-link");
-celsiusLink.addEventListener("click", conversionToCelsius);
 
 searchCity("Lisbon");
