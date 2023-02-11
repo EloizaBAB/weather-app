@@ -17,7 +17,7 @@ function formatDate(date) {
   if (minutes < 10) {
     minutes = `0${minutes}`;
   }
-  let currentDate = `${day} ${time}:${minutes}`;
+  let currentDate = `${day}, ${time}:${minutes}`;
   return currentDate;
 }
 let now = new Date();
@@ -79,7 +79,7 @@ function displayForecast(response) {
                   src="http://openweathermap.org/img/wn/${
                     forecastDay.weather[0].icon
                   }@2x.png"
-                  alt=""
+                  alt="" width="50px"
                 />
                 <div class="weather-forecast-temperatures">
                   <span class="weater-forecast-maxtemp">${Math.round(

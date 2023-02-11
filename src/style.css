@@ -12,7 +12,7 @@
   justify-content: center;
 }
 .container {
-  height: 480px;
+  height: 500px;
   width: 600px;
   margin-top: 20px;
   padding-bottom: 12px;
@@ -66,7 +66,7 @@
   justify-content: center;
   font-weight: 500;
   color: rgb(251, 248, 248);
-  margin-left: 90px;
+  margin-left: 80px;
 }
 li {
   list-style: none;
