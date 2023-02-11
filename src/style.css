@@ -38,7 +38,6 @@
   background: #a5bad9;
   background: -webkit-linear-gradient(to right, #b6fbff, #8aa3c8);
   background: linear-gradient(to right, #b9edf0, #87a3ce);
-
   width: 800px;
   display: block;
   margin: 0 auto;
@@ -101,7 +100,6 @@ h1 {
 
 a {
   text-decoration: none;
-  color: black;
   font-family: "Montserrat Alternates", sans-serif;
   font-weight: 900;
   color: rgb(251, 248, 248);
@@ -127,7 +125,6 @@ button {
   box-shadow: 0 15px 30px rgba(0, 0, 0, 0.5);
   overflow: hidden;
   font-family: "Montserrat Alternates", sans-serif;
-  font-weight: bolder;
   font-weight: 900;
 }
 input {
