@@ -153,6 +153,6 @@ hr {
   margin: 0 auto;
   color: #ffffff;
 }
-.col-2 {
-  padding: 25px;
+div.col-2 {
+  padding: 30px;
 }
