@@ -17,7 +17,7 @@ function formatDate(date) {
   if (minutes < 10) {
     minutes = `0${minutes}`;
   }
-  let currentDate = `${day}, ${time}:${minutes}`;
+  let currentDate = `${day}, ${time}: ${minutes}`;
   return currentDate;
 }
 let now = new Date();
