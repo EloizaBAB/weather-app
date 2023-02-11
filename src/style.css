@@ -16,20 +16,13 @@
   justify-content: center;
 }
 .container {
-  height: 400px;
+  height: 430px;
   width: 600px;
   margin-top: 20px;
   padding-bottom: 12px;
   border-radius: 54px;
-  background: rgb(157, 115, 75);
-  background: linear-gradient(
-    0deg,
-    rgba(157, 115, 75, 1) 0%,
-    rgba(224, 166, 91, 1) 10%,
-    rgba(235, 172, 120, 1) 33%,
-    rgba(251, 237, 226, 1) 100%
-  );
   box-shadow: -31px 31px 54px #8c9fa9, 31px -31px 54px #ffffff;
+  background-image: url("/images/orangebackground.jpeg");
 }
 .temperature-grid {
   margin-top: 60px;
@@ -61,7 +54,9 @@
 
 .forecast-grid {
   margin-left: 30px;
-  text-align: center;
+  display: block;
+  margin: 0 auto;
+  margin-left: 100px;
 }
 li {
   list-style: none;
