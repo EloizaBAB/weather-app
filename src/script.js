@@ -85,7 +85,7 @@ function displayForecast(response) {
                 <div class="weather-forecast-temperatures">
                   <span class="weater-forecast-maxtemp">${Math.round(
                     forecastDay.temp.max
-                  )}°</span>
+                  )}° </span>
                   <span class="weather-forecast-mintemp">${Math.round(
                     forecastDay.temp.min
                   )}°</span>
@@ -102,18 +102,6 @@ function formatDay(timestamp) {
   let forecastDay = forecastDate.getDay();
   let forecastDays = ["Sun", "Mon", "Tue", "Wed", "Thu", "Fri", "Sat"];
   return forecastDays[forecastDay];
-}
-
-function conversionToCelsius(event) {
-  temperatureElement = document.querySelector("#temperature");
-  event.preventDefault();
-  temperatureElement.innerHTML = Math.round(celsiusTemperature);
-}
-function conversionToFahrenheit(event) {
-  event.preventDefault();
-  let fahrenheitTemperature = (celsiusTemperature * 9) / 5 + 32;
-  let temperatureElement = document.querySelector("#temperature");
-  temperatureElement.innerHTML = Math.round(fahrenheitTemperature);
 }
 
 function searchCity(city) {

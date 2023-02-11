@@ -1,13 +1,9 @@
-.city-name {
-  font-size: 60px;
-  margin-top: 0px;
-  font-family: "Montserrat Alternates", sans-serif;
-  font-weight: bolder;
-}
 .date {
-  font-size: 20px;
+  font-size: 25px;
   font-family: "Montserrat Alternates", sans-serif;
-  font-weight: bolder;
+  font-weight: 900;
+  color: rgb(251, 248, 248);
+  padding-bottom: 30px;
 }
 
 .location-bar {
@@ -16,20 +12,32 @@
   justify-content: center;
 }
 .container {
-  height: 430px;
+  height: 480px;
   width: 600px;
   margin-top: 20px;
   padding-bottom: 12px;
   border-radius: 54px;
   box-shadow: -31px 31px 54px #8c9fa9, 31px -31px 54px #ffffff;
-  background-image: url("/images/orangebackground.jpeg");
+  background: rgb(214, 138, 74);
+  background: linear-gradient(
+    0deg,
+    rgba(214, 138, 74, 0.9542410714285714) 0%,
+    rgba(210, 118, 64, 0.9598433123249299) 5%,
+    rgba(226, 123, 65, 0.9934567577030813) 19%,
+    rgba(236, 131, 48, 1) 31%,
+    rgba(246, 145, 63, 0.9766500350140056) 57%,
+    rgba(236, 180, 136, 1) 86%,
+    rgba(233, 191, 158, 1) 100%
+  );
 }
 .temperature-grid {
   margin-top: 60px;
   border: none;
 }
 .body-style {
-  background: rgb(244, 242, 242);
+  background: #a5bad9;
+  background: -webkit-linear-gradient(to right, #b6fbff, #8aa3c8);
+  background: linear-gradient(to right, #b9edf0, #87a3ce);
 
   width: 800px;
   display: block;
@@ -41,57 +49,62 @@
   justify-content: center;
   padding: 20px;
   font-family: "Montserrat Alternates", sans-serif;
-  font-weight: bolder;
+  font-weight: 900;
+  color: rgb(251, 248, 248);
 }
 .current-location-bt {
   display: block;
   margin: 0 auto;
 }
 .current-location-bt:hover {
-  background: #d9d8e6;
-  color: #12376e;
+  background: #f29953;
+  color: #ffffff;
 }
 
 .forecast-grid {
-  margin-left: 30px;
-  display: block;
-  margin: 0 auto;
-  margin-left: 100px;
+  display: flex;
+  justify-content: center;
+  font-weight: 500;
+  color: rgb(251, 248, 248);
+  margin-left: 90px;
 }
 li {
   list-style: none;
   font-family: "Montserrat Alternates", sans-serif;
-  font-weight: bolder;
+  font-weight: 900;
+  color: rgb(251, 248, 248);
+  position: relative;
+  top: -30px;
 }
 
 ul {
   padding: 0;
   margin: 0;
-  margin-top: 30px;
+  margin-top: 25px;
+  padding-bottom: 20px;
 }
 h1 {
-  padding-top: 20px;
+  padding-top: 30px;
   font-family: "Montserrat Alternates", sans-serif;
-  font-weight: bolder;
+  font-weight: 900;
+  color: rgb(251, 248, 248);
 }
 .temperature {
   font-size: 70px;
   text-align: center;
+  font-weight: 900;
+  color: rgb(251, 248, 248);
   font-family: "Montserrat Alternates", sans-serif;
-  font-weight: bolder;
-}
-.units {
-  font-size: 20px;
   position: relative;
-  top: -30px;
-  font-family: "Montserrat Alternates", sans-serif;
-  font-weight: bolder;
+  bottom: -50px;
 }
+
 a {
   text-decoration: none;
   color: black;
   font-family: "Montserrat Alternates", sans-serif;
-  font-weight: bolder;
+  font-weight: 900;
+  color: rgb(251, 248, 248);
 }
 .icon {
   width: 90px;
@@ -102,8 +115,10 @@ a {
 button {
   width: 150px;
   height: 50px;
-  background: linear-gradient(to top, #00154c, #12376e, #23487f);
-  color: #d1d6dc;
+  background: #83a4d4;
+  background: -webkit-linear-gradient(to right, #bee7e9, #a0b3d0);
+  background: linear-gradient(to right, #b6fbff, #a8b8d0);
+  color: #5c270d;
   border-radius: 50px;
   border: none;
   outline: none;
@@ -113,6 +128,7 @@ button {
   overflow: hidden;
   font-family: "Montserrat Alternates", sans-serif;
   font-weight: bolder;
+  font-weight: 900;
 }
 input {
   color: #021444;
@@ -121,10 +137,11 @@ input {
   display: block;
   width: 150px;
   border: none;
-  border-bottom: 1px solid rgba(32, 82, 139, 1);
+  border-bottom: 1px solid rgb(242, 245, 247);
   background: transparent;
   font-family: "Montserrat Alternates", sans-serif;
-  font-weight: bolder;
+  font-weight: 900;
+  color: rgb(251, 248, 248);
 }
 
 .form-location-bar {
@@ -134,5 +151,8 @@ hr {
   width: 500px;
   display: block;
   margin: 0 auto;
-  padding-top: 20px;
+  color: #ffffff;
+}
+.col-2 {
+  padding: 25px;
 }
