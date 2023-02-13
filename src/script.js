@@ -123,4 +123,14 @@ searchCity("Lisbon");
 let getCurrentLocationButton = document.querySelector("#current-location");
 getCurrentLocationButton.addEventListener("click", getCurrentLocation);
 
+let userInput = document.querySelector("#input-city");
+let displayMessage = document.querySelector("#city");
+userInput.addEventListener("blur", (e) => {
+  if (!cityExists(e.target.value)) {
+    displayMessage.style.display = "block";
+    displayMessage.innerHTML = "City not found";
+  }
+});
+function cityExists(str) {}
+
 searchCity("Lisbon");
