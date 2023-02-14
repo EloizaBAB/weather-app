@@ -3,7 +3,7 @@
   font-family: "Montserrat Alternates", sans-serif;
   font-weight: 900;
   color: rgb(251, 248, 248);
-  padding-bottom: 30px;
+  padding-bottom: 10px;
 }
 
 .location-bar {
@@ -12,7 +12,7 @@
   justify-content: center;
 }
 .container {
-  height: 540px;
+  height: 550px;
   width: 620px;
   margin-top: 20px;
   padding-bottom: 12px;
