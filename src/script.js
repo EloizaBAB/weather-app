@@ -1,6 +1,6 @@
 /**
  *
- * @param {integer} a number 1-7 that corresponds to each day of the week
+ * @param {number} a number 1-7 that corresponds to each day of the week
  * @returns the current date and time (local timezone)
  * Created an array with the name of the days of the week in one variable and used the method .getDay() that gives a number between 1 and 7 as index and  get the day of the week
  * To get the hours I created a variable and used the method .now.getHours() that returns the hour for the specified date,according to local time
@@ -45,7 +45,7 @@ date.innerHTML = formatDate();
  * @param {number} position based on the latitude and longitude.
  * Used Axios, it has the ability to make HTTP requests from the browser and handle the transformation of request and response data.
  * I used the AJAX technique to this web application be able to make quick, incremental updates to the user interface without reloading the entire browser page. This makes the application faster and more responsive to user actions.
- *Used the method get().then() to be abble to display the temperature based on the coordenates.
+ *Used the method get().then() to be abble to display the temperature based on the coordinates.
  */
 function searchLocation(position) {
   let apikey = "8161b4309ee03faae957729ba7104797";
@@ -57,12 +57,18 @@ function searchLocation(position) {
  *
  * @param {click} event a click form the button "Your current location".
  * Used the method preventDefault (click) that cancels the event if it is cancelable,so the default action that belongs to the event will not occur.
+ * To get the current location of a device I used the navigator.geolocation, a property that returns a Geolocation object that gives Web content access to the location of that device and then called the function searchLocation to get the coordinates.
  */
 function getCurrentLocation(event) {
   event.preventDefault();
   navigator.geolocation.getCurrentPosition(searchLocation);
 }
 
+/**
+ *
+ * @param {number} coordinates
+ * Used an one call API to get the weather data for a specific location that is going to be displayed on the forecast.
+ */
 function getForecast(coordinates) {
   let apiKey = "8161b4309ee03faae957729ba7104797";
   let apiURL = `https://api.openweathermap.org/data/2.5/onecall?lat=${coordinates.lat}&lon=${coordinates.lon}&appid=${apiKey}&units=metric`;
