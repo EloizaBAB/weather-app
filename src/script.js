@@ -65,15 +65,26 @@ function getCurrentLocation(event) {
 }
 
 /**
+ *@param {number} coordinates
+ * Used Axios, it has the ability to make HTTP requests from the browser and handle the transformation of request and response data.
  *
- * @param {number} coordinates
- * Used an one call API to get the weather data for a specific location that is going to be displayed on the forecast.
+ * Used an one call API to get the weather data for a specific location that is going to be displayed on the forecast.This API asks us to provide 4 parameters(long,lat,units,key).
+ * Whenever the user searches for a city name we need to wait until we get the response from the initial api call and once we have it we can call this "one call api" knowing the coordinates and then get the forecast.
  */
 function getForecast(coordinates) {
   let apiKey = "8161b4309ee03faae957729ba7104797";
   let apiURL = `https://api.openweathermap.org/data/2.5/onecall?lat=${coordinates.lat}&lon=${coordinates.lon}&appid=${apiKey}&units=metric`;
   axios.get(apiURL).then(displayForecast);
 }
+
+/**
+ *This function returns the weather data and display it on the app
+ * @param {object} response represents the response to a request
+ * To get the matching icon for each temperature, the city's name and the corresponding temperatureI went inside the object response.data.name/temp/humidity/windspeed/icon
+ * Then I displayed the temperature,humidity,icon,wind speed and the city name inside the HTMl's corresponding element using template literals.
+ * To get the icon for each temperature I used .setAttribute(name,value), it sets the value of an attribute on the specified element. I got the URL for the icon in the openWeather website and used template literals how it's specified in the website.
+ * Called the function getForecast and asked for the coordinates that is being used by this function to get the weather data for those coordinates.
+ */
 function showTemperature(response) {
   let iconElement = document.querySelector("#icon");
   document.querySelector("#city").innerHTML = response.data.name;
@@ -97,6 +108,18 @@ function showTemperature(response) {
   getForecast(response.data.coord);
 }
 
+/**
+ *
+ * @param {object} response represents the response to a request of another API operation.
+ * Created a variable to store the data for the forecast and went inside the object.
+ * The grid for the forecast is built using JS:created a variable to select the grid's id and another one to store the "open the row".
+ * Using a loop forEach display the temperature for the other days, it's going to loop through the array we got from the one call api and store the response inside forecast variable.
+ * To loop through the forecast forecast.forEach(function(forecastDay,index)). Inside this forecastDay we don't have the info about the day, we have dt,and to get the day we need to replace it by ${forecastDay.dt} inside the block of code we inject from the HTML in here.
+ * To get the max and min temperatures we get it from the array too and use interpolation ${forecastDay.temp.max/min}
+ * Inside the loop, I created a new function and gave (forecastDay,index) as parameters, it is auto-executed function.
+ * Inside the loop I created a condition, if the second parameter (index) is less than 5 (rows) then I want to display the rows in this format
+ * Used template literals to
+ */
 function displayForecast(response) {
   let forecast = response.data.daily;
   let forecastElement = document.querySelector("#forecast");
@@ -132,6 +155,14 @@ function displayForecast(response) {
   forecastHTML = forecastHTML + `</div>`;
   forecastElement.innerHTML = forecastHTML;
 }
+
+/**
+ *
+ * @param {*} timestamp
+ * @returns
+ * To fix the dt(timestamp) i created this function that is being called inside displayForecast
+ * Created a new date
+ */
 function formatDay(timestamp) {
   let forecastDate = new Date(timestamp * 1000);
   let forecastDay = forecastDate.getDay();
