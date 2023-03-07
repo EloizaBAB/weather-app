@@ -41,7 +41,7 @@ let date = document.querySelector("#date");
 date.innerHTML = formatDate();
 
 /**
- *
+ * We need to give permission to our computer or phone to use our location in order for this code to work. Once we have allowed that, the code uses the information about our location to find out the temperature and display it on the screen.
  * @param {number} position based on the latitude and longitude.
  * Used Axios, it has the ability to make HTTP requests from the browser and handle the transformation of request and response data.
  * I used the AJAX technique to this web application be able to make quick, incremental updates to the user interface without reloading the entire browser page. This makes the application faster and more responsive to user actions.
@@ -54,10 +54,11 @@ function searchLocation(position) {
 }
 
 /**
- *
+ * This function finds out where the person using the computer is located. It does this by asking the computer's web browser for its location and then running a function called searchLocation with that information.
  * @param {click} event a click form the button "Your current location".
  * Used the method preventDefault (click) that cancels the event if it is cancelable,so the default action that belongs to the event will not occur.
  * To get the current location of a device I used the navigator.geolocation, a property that returns a Geolocation object that gives Web content access to the location of that device and then called the function searchLocation to get the coordinates.
+ *  It then asks the browser for the user's location and puts the result into searchLocation.
  */
 function getCurrentLocation(event) {
   event.preventDefault();
@@ -109,16 +110,16 @@ function showTemperature(response) {
 }
 
 /**
- *
+ * It shows what the weather will be like for the next five days. It takes information about the weather and puts it into a special format so that we can see it on a website or app. It makes little boxes for each day with a picture of what the weather will look like, the high temperature for the day, and the low temperature for the day.
  * @param {object} response represents the response to a request of another API operation.
  * Created a variable to store the data for the forecast and went inside the object.
  * The grid for the forecast is built using JS:created a variable to select the grid's id and another one to store the "open the row".
+ * the forecast.forEach(function(forecastDay,index)) is going to receive one number between 1 and 7 that corresponds to each day of the week
  * Using a loop forEach display the temperature for the other days, it's going to loop through the array we got from the one call api and store the response inside forecast variable.
  * To loop through the forecast forecast.forEach(function(forecastDay,index)). Inside this forecastDay we don't have the info about the day, we have dt,and to get the day we need to replace it by ${forecastDay.dt} inside the block of code we inject from the HTML in here.
  * To get the max and min temperatures we get it from the array too and use interpolation ${forecastDay.temp.max/min}
  * Inside the loop, I created a new function and gave (forecastDay,index) as parameters, it is auto-executed function.
  * Inside the loop I created a condition, if the second parameter (index) is less than 5 (rows) then I want to display the rows in this format
- * Used template literals to
  */
 function displayForecast(response) {
   let forecast = response.data.daily;
@@ -157,11 +158,14 @@ function displayForecast(response) {
 }
 
 /**
- *
+ *formatDay() takes a timestamp as an input.
  * @param {*} timestamp
- * @returns
- * To fix the dt(timestamp) i created this function that is being called inside displayForecast
- * Created a new date
+ * @returns  returns the name of the day of the week that corresponds to the input timestamp.
+ *The function creates a new date object (forecastDate) using the timestamp and then uses the getDay() method to get the day of the week for that date.
+ * To fix the dt(timestamp) i created this function that is being called inside displayForecast.
+ * Created a variable to store the days of the week(numbers between 1 and 7) that is going to be used as an index for the array.
+ * created an array with the names of the days of the week in the short term,and in return we get a day of the week indexing.
+ * By indexing we can get use it in above function to display the days of the week and its corresponding temperature and the temperature's icon.
  */
 function formatDay(timestamp) {
   let forecastDate = new Date(timestamp * 1000);
@@ -170,6 +174,11 @@ function formatDay(timestamp) {
   return forecastDays[forecastDay];
 }
 
+/**
+ * This function finds out the temperature in any city we want.
+ * @param {string} city
+ *  It uses a website called "OpenWeatherMap" to get the temperature data.
+ */
 function searchCity(city) {
   let apiKey = "8161b4309ee03faae957729ba7104797";
   let apiUrl = `https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${apiKey}&units=metric`;
