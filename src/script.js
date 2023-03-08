@@ -79,12 +79,13 @@ function getForecast(coordinates) {
 }
 
 /**
- *This function returns the weather data and display it on the app
+ *This function takes a single parameter response which is the response data returned by an API call to a weather service. The function updates the HTML content of certain elements on the page to display the weather information in a user-friendly format.
  * @param {object} response represents the response to a request
- * To get the matching icon for each temperature, the city's name and the corresponding temperatureI went inside the object response.data.name/temp/humidity/windspeed/icon
+ * To get the matching icon for each temperature, the city's name and the corresponding temperatureI went inside the object response.data.name/temp/humidity/windspeed/icon.
+ * The temperature is rounded to the nearest integer using the Math.round() function and assigned to the celsiusTemperature variable.
  * Then I displayed the temperature,humidity,icon,wind speed and the city name inside the HTMl's corresponding element using template literals.
  * To get the icon for each temperature I used .setAttribute(name,value), it sets the value of an attribute on the specified element. I got the URL for the icon in the openWeather website and used template literals how it's specified in the website.
- * Called the function getForecast and asked for the coordinates that is being used by this function to get the weather data for those coordinates.
+ * Finally, it calls another function "getForecast" and passes the latitude and longitude coordinates of the location obtained from the response object as an argument.
  */
 function showTemperature(response) {
   let iconElement = document.querySelector("#icon");
@@ -162,7 +163,7 @@ function displayForecast(response) {
  * @param {*} timestamp
  * @returns  returns the name of the day of the week that corresponds to the input timestamp.
  *The function creates a new date object (forecastDate) using the timestamp and then uses the getDay() method to get the day of the week for that date.
- * To fix the dt(timestamp) i created this function that is being called inside displayForecast.
+ * To fix the dt(timestamp) I created this function that is being called inside displayForecast.
  * Created a variable to store the days of the week(numbers between 1 and 7) that is going to be used as an index for the array.
  * created an array with the names of the days of the week in the short term,and in return we get a day of the week indexing.
  * By indexing we can get use it in above function to display the days of the week and its corresponding temperature and the temperature's icon.
@@ -184,6 +185,14 @@ function searchCity(city) {
   let apiUrl = `https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${apiKey}&units=metric`;
   axios.get(apiUrl).then(showTemperature);
 }
+
+/**
+ * This function is called when a form is submitted.
+ * @param {event} it takes an event object as a parameter and prevents the default form submission behavior.
+ * Then, it gets the value of the input element using the document.querySelector() method, and assigns it to the city variable.
+
+After that, the function calls another function searchCity() and passes the city variable as an argument.
+ */
 function handleSubmit(event) {
   event.preventDefault();
   let city = document.querySelector("#input-city").value;
@@ -192,13 +201,23 @@ function handleSubmit(event) {
 
 let celsiusTemperature = null;
 
+/**
+ *I selected an HTML form element with an id of search-form and assigned it to the variable form. It then adds an event listener to the form that listens for a submit event and calls the handleSubmit() function when the form is submitted.
+ *The code then calls the searchCity() function and passes the argument "Lisbon" to it. This is going to initialize the page with the weather information for Lisbon.
+ */
 let form = document.querySelector("#search-form");
 form.addEventListener("submit", handleSubmit);
 searchCity("Lisbon");
 
+/**
+ * I selected an HTML button element and assigned it to the variable getCurrentLocationButton. It then adds an event listener to the button that listens for a click event and calls the getCurrentLocation() function when the button is clicked.
+ */
 let getCurrentLocationButton = document.querySelector("#current-location");
 getCurrentLocationButton.addEventListener("click", getCurrentLocation);
-
+/**
+ * I selected an HTML element with an id of input-city and assigned it to a variable.And did the same for the with the element with the "city" and assigned it to a variable called "displayMessage".
+ * I added an event listener to "userInput" that listens for a blur event. When the input is not found/provided, the event listener checks if the entered city exists using a cityExists() function (which is currently empty). If the city does not exist, the displayMessage element("City not found") is shown.
+ */
 let userInput = document.querySelector("#input-city");
 let displayMessage = document.querySelector("#city");
 userInput.addEventListener("blur", (e) => {
