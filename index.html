@@ -19,20 +19,31 @@
         />
         <script src="https://unpkg.com/axios@1.1.2/dist/axios.min.js"></script>
         <link rel="stylesheet" href="src/style.css" />
+        <link
+          rel="stylesheet"
+          href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/css/bootstrap.min.css"
+        />
+        <link
+          rel="stylesheet"
+          href="	https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/js/bootstrap.bundle.min.js"
+        />
         <link rel="preconnect" href="https://fonts.googleapis.com" />
         <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
         <link
-          href="https://fonts.googleapis.com/css2?family=Montserrat+Alternates:wght@200&family=Raleway:ital@1&display=swap"
+          href="https://fonts.googleapis.com/css2?family=Alegreya+Sans+SC:wght@800&family=Asap:wght@700&family=Comfortaa&family=DM+Sans:wght@700&family=Dosis:wght@600&family=Heebo:wght@700&family=Lato:ital,wght@0,300;0,700;1,400&family=Montserrat+Alternates:ital,wght@0,200;1,500&family=Mukta&family=Nerko+One&family=Nunito:wght@900&family=Oswald:wght@500&family=Pacifico&family=Playfair+Display&family=Quicksand&family=Raleway:ital@1&display=swap"
           rel="stylesheet"
         />
       </head>
-      <body class="body-style">
-        <div class="container">
-          <button class="current-location-bt" id="current-location">
-            Your current Location
-          </button>
+      <body>
+        <div class="container text-center">
           <div class="row">
-            <div class="col-6">
+            <div class="col-sm-6">
+              <button id="current-location">Get your current Location</button>
+            </div>
+            <div class="col-sm-6"><h1 id="city"></h1></div>
+          </div>
+          <div class="row">
+            <div class="col">
               <form id="search-form" class="location-bar">
                 <input
                   type="text"
@@ -40,15 +51,18 @@
                   class="form-location-bar"
                   id="input-city"
                 />
-                <input type="submit" value="🔎" class="form-location-bar" />
+                <input
+                  type="submit"
+                  value="Search"
+                  class="search-location-bar"
+                />
               </form>
               <div class="temperature">
                 <strong id="temperature"></strong>
                 <small>°C </small>
               </div>
             </div>
-            <div class="col-6">
-              <h1 id="city"></h1>
+            <div class="col">
               <div class="d-flex weather-temperature">
                 <ul class="plus-info">
                   <li id="date" class="date"></li>
@@ -65,20 +79,24 @@
               </div>
             </div>
           </div>
-          <hr />
-          <div class="forecast-grid" id="forecast">
-            <div class="row">
-              <div class="col-2">
-                <div class="weather-forecast-date"></div>
-                <img
-                  src="https://ssl.gstatic.com/onebox/weather/64/partly_cloudy.png"
-                  class="forecast-icons"
-                  alt=""
-                  width="50px"
-                />
-                <div class="weather-forecast-temperatures">
-                  <span class="weater-forecast-maxtemp"></span>
-                  <span class="weather-forecast-mintemp"></span>
+          <div class="row">
+            <h3>Weekly forecast</h3>
+          </div>
+          <div class="row">
+            <div class="forecast-grid" id="forecast">
+              <div class="row">
+                <div class="col-2">
+                  <div class="weather-forecast-date"></div>
+                  <img
+                    src="https://ssl.gstatic.com/onebox/weather/64/partly_cloudy.png"
+                    class="forecast-icons"
+                    alt=""
+                    width="60px"
+                  />
+                  <div class="weather-forecast-temperatures">
+                    <span class="weater-forecast-maxtemp"></span>
+                    <span class="weather-forecast-mintemp"></span>
+                  </div>
                 </div>
               </div>
             </div>
