@@ -6,23 +6,16 @@
   --peach-color: #edccb6;
 }
 .date {
-  font-size: 25px;
+  font-size: 24px;
   margin-top: 30px;
-  color: black;
 }
 
-body {
-  background-color: var(--purple-color);
-  font-family: "Dosis", sans-serif;
-}
 .location-bar {
   margin-top: 30px;
   display: flex;
   justify-content: center;
 }
-.container.text-center {
-  margin: 10px 20px 30px 40px;
-}
+
 .container {
   margin-top: 70px;
   border-radius: 5px;
@@ -87,7 +80,7 @@ button {
   height: 60px;
   background: var(--salmon-color);
   color: black;
-  border-radius: 5px;
+  border-radius: 15px;
   border: 1px solid black;
   text-align: center;
 }
