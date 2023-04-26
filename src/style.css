@@ -38,13 +38,10 @@
   li#date {
     margin-top: 0;
   }
-}
-.col-2 {
-  padding: 0;
-}
-div.col-2 {
-  margin-left: 30px;
-  padding: 0;
+  div.col-2 {
+    margin-left: 20px;
+    padding: 0;
+  }
 }
 
 .date {
@@ -65,7 +62,7 @@ body {
   margin-top: 70px;
   border-radius: 5px;
   background-image: url("/src/8c6293f2ccb3b36222301e5da06f6f60.gif");
-  border: 2px solid black;
+  border: 2px solid white;
   width: 550px;
 }
 .temperature-grid {
@@ -83,8 +80,8 @@ body {
 }
 
 button:hover {
-  background: #b7788e;
-  color: black;
+  background: #ba686e;
+  color: white;
 }
 
 .forecast-grid {
@@ -121,16 +118,15 @@ a {
   vertical-align: middle;
   width: 80px;
   height: 80px;
-  border: 2px solid white;
-  border-radius: 15px;
 }
 button {
   width: 150px;
   height: 60px;
-  background: var(--salmon-color);
-  color: black;
-  border: 2px solid black;
+  background: #b7788e;
+  color: white;
+  border: 2px solid white;
   text-align: center;
+  border-radius: 5px;
 }
 div.col-sm-6 {
   margin-top: 30px;
