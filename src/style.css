@@ -7,21 +7,28 @@
 }
 @media (max-width: 600px) {
   .icon {
-    width: 100px;
-    height: 100px;
-  }
-  .plus-info {
-    padding: 0;
+    display: none;
   }
   div.container.text-center {
+    width: 300px;
+    height: 500px;
+    border: none;
     padding: 0;
-    margin: 0;
+    display: block;
+    margin: 0 auto;
+  }
+  a.source-link {
+    display: none;
+  }
+  h1#city {
+    color: white;
   }
 }
 
 .date {
   font-size: 24px;
   margin-top: 30px;
+  color: white;
 }
 
 .location-bar {
@@ -30,14 +37,14 @@
   justify-content: center;
 }
 body {
-  background-color: aquamarine;
+  background-color: #eda082;
 }
 .container {
   margin-top: 70px;
   border-radius: 5px;
-  background: transparent;
+  background-image: url("/src/8c6293f2ccb3b36222301e5da06f6f60.gif");
   border: 2px solid black;
-  width: max-content;
+  width: 550px;
 }
 .temperature-grid {
   margin-top: 60px;
@@ -50,11 +57,11 @@ body {
   justify-content: center;
   padding: 20px;
   font-weight: 900;
-  color: var(--orange-color);
+  color: white;
 }
 
 button:hover {
-  background: var(--purple-color);
+  background: #b7788e;
   color: black;
 }
 
@@ -63,7 +70,7 @@ button:hover {
 }
 li {
   list-style: none;
-  color: black;
+  color: white;
   padding: 5px;
 }
 div.row {
@@ -72,14 +79,15 @@ div.row {
 h1 {
   padding-top: 10px;
   font-weight: 700;
-  color: black;
-  font-size: 70px;
+  color: white;
+  font-size: 50px;
 }
 .temperature {
   font-size: 70px;
   text-align: center;
   font-weight: 300;
   margin-top: 30px;
+  color: white;
 }
 
 a {
@@ -89,8 +97,10 @@ a {
 }
 .icon {
   vertical-align: middle;
-  width: 150px;
-  height: 150px;
+  width: 80px;
+  height: 80px;
+  border: 2px solid white;
+  border-radius: 15px;
 }
 button {
   width: 150px;
@@ -108,13 +118,14 @@ input {
   padding: 5px 55px 5px 5px;
   display: block;
   border: none;
-  border-bottom: 2px solid black;
+  border-bottom: 2px solid white;
   background: transparent;
 }
 .search-location-bar {
   width: 50px;
   font-size: 10px;
   padding: 5px 10px;
+  color: white;
 }
 .form-location-bar {
   width: 180px;
@@ -125,9 +136,10 @@ div.col-2 {
 }
 h3 {
   font-size: 20px;
-  border-bottom: 2px solid black;
+  color: white;
 }
 div#forecast.forecast-grid {
   margin: 0;
   padding: 0;
+  color: white;
 }
