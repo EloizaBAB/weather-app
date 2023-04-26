@@ -16,6 +16,8 @@
     padding: 0;
     display: block;
     margin: 0 auto;
+    width: 300px;
+    height: 500px;
   }
   a.source-link {
     display: none;
@@ -23,6 +25,26 @@
   h1#city {
     color: white;
   }
+  ul.plus-info {
+    margin-top: 20px;
+    background: #ba686e;
+    box-shadow: 47px 47px 90px #8d4f54, -47px -47px 90px #e78188;
+    margin-top: 50px;
+    border-radius: 5px;
+  }
+  ul.plus-info {
+    padding-left: 0;
+  }
+  li#date {
+    margin-top: 0;
+  }
+}
+.col-2 {
+  padding: 0;
+}
+div.col-2 {
+  margin-left: 30px;
+  padding: 0;
 }
 
 .date {
@@ -37,7 +59,7 @@
   justify-content: center;
 }
 body {
-  background-color: #eda082;
+  background-color: #ba686e;
 }
 .container {
   margin-top: 70px;
