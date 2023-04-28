@@ -31,10 +31,9 @@
     box-shadow: 47px 47px 90px #8d4f54, -47px -47px 90px #e78188;
     margin-top: 50px;
     border-radius: 5px;
-  }
-  ul.plus-info {
     padding-left: 0;
   }
+
   li#date {
     margin-top: 0;
   }
@@ -161,4 +160,11 @@ div#forecast.forecast-grid {
   margin: 0;
   padding: 0;
   color: white;
+}
+li.city-info {
+  color: white;
+  background-color: #94466a;
+  border-radius: 50px;
+  box-shadow: 5px 3px 10px #525e63, -5px -3px 10px #ffffff;
+  border-radius: 5px;
 }
