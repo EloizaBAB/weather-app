@@ -33,6 +33,12 @@
     border-radius: 5px;
     padding-left: 0;
   }
+  li:not(:first-child) {
+    color: white;
+    background-color: #94466a;
+    border-radius: 10px;
+    box-shadow: 1px 1px 1px #a3b9c4, -1px -1px 10px #f9ffff;
+  }
 
   li#date {
     margin-top: 0;
