@@ -218,14 +218,16 @@ getCurrentLocationButton.addEventListener("click", getCurrentLocation);
  * I selected an HTML element with an id of input-city and assigned it to a variable.And did the same for the with the element with the "city" and assigned it to a variable called "displayMessage".
  * I added an event listener to "userInput" that listens for a blur event. When the input is not found/provided, the event listener checks if the entered city exists using a cityExists() function (which is currently empty). If the city does not exist, the displayMessage element("City not found") is shown.
  */
-let userInput = document.querySelector("#input-city");
-let displayMessage = document.querySelector("#city");
-userInput.addEventListener("blur", (e) => {
-  if (!cityExists(e.target.value)) {
-    displayMessage.style.display = "block";
-    displayMessage.innerHTML = "City not found";
-  }
-});
-function cityExists(str) {}
 
+//Selected html search-form element that listens to a click event and calls the function empty.
+//This function checks if the user inputed a city, and if not it returns the message "serch for a city".
+
+function empty() {
+  if (document.querySelector("#input-city").value == "") {
+    document.querySelector("#city").innerHTML = "Search for a city.";
+    return false;
+  }
+}
+let emptyInput = document.querySelector("#search-form");
+emptyInput.addEventListener("click", empty);
 searchCity("Lisbon");
