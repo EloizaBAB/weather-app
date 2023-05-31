@@ -67,7 +67,7 @@ body {
 .container {
   margin-top: 70px;
   border-radius: 5px;
-  background-image: url("/src/8c6293f2ccb3b36222301e5da06f6f60.gif");
+  background-image: url("/src/bgimage.gif");
   border: 2px solid white;
   width: 550px;
 }
