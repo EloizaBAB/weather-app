@@ -4,6 +4,7 @@
   --yellow-color: #d9a735;
   --purple-color: #c7b9c5;
   --peach-color: #edccb6;
+  --dark-sky: #2f114b;
 }
 @media (max-width: 600px) {
   .icon {
@@ -61,7 +62,7 @@
   justify-content: center;
 }
 body {
-  background-color: #ba686e;
+  background-color: var(--dark-sky);
 }
 .container {
   margin-top: 70px;
